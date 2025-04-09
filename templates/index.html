@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Encrypted Lyrics</title>
+</head>
+<body>
+    <h1>Encrypt Song Lyrics and Compare</h1>
+    
+    <!-- Form to enter the original text, shift value, and comparison text -->
+    <form method="POST">
+        <label for="original_text">Enter Song Lyrics (Original):</label><br>
+        <textarea name="original_text" rows="8" cols="50" required></textarea><br><br>
+
+        <label for="shift">Shift Value (Number of Positions):</label><br>
+        <input type="number" name="shift" required><br><br>
+    
+        <label for="comparison_text">Enter Text to Compare with Encrypted Lyrics:</label><br>
+        <textarea name="comparison_text" rows="8" cols="50" placeholder="Enter text to compare here..." required></textarea><br><br>
+    
+        <button type="submit">Submit</button>
+    </form>
+    
+
+    {% if result_message %}
+        <h2>{{ result_message }}</h2>
+        <h3>Encrypted Lyrics:</h3>
+        <pre>{{ encrypted_text }}</pre>
+    {% endif %}
+</body>
+</html>
